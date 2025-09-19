@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PokeDex Sara Santacruz Corredor</title>
+</head>
+<body>
+    <div class="PokeDex">
+        <!--Pokedex Cerrada-->
+        <img id="close" src="Assets/Images/PokeDex-Cerrado.svg" alt="PokeDex-Cerrado"> <!--Img cerrada-->
+
+        <!--Pokedex Abierta-->
+        <button id="openButton" class="button"> <!--Boton abrir-->
+            <img src="Assets/Images/BotonAmarilloC.svg" alt="openButton"> 
+        </button> 
+        
+        <div id="open"  style="display:none;">
+        <img src="Assets/Images/PokeDex-Abierto.svg" alt="PokeDex-Abierto"> <!--Img abierta-->
+
+        
+        <div class="green"> <!--Pantalla invisible donde se muestra el codigo del Pokemon-->
+            <div id="codePokemon" class="code-pokemon"></div> <!--Se muestra el codigo del pokemon-->
+        </div>
+
+        <div class = "name">
+            <div id = "namePokemon" class = "name-pokemon"></div>
+        </div>
+
+        <div class="Keypad"> <!--Teclado para digitar codigo-->
+            <button class="key" data-digit="0"><img src="Assets/Images/Botton0.svg" alt=""></button> <!--Se lee el valor cuando se haga click-->
+            <button class="key" data-digit="1"><img src="Assets/Images/Botton1.svg" alt=""></button> <!--data-digit es para guardar el valor del boton con JS y alt vacio porque la img es decorativa-->
+            <button class="key" data-digit="2"><img src="Assets/Images/Botton2.svg" alt=""></button>
+            <button class="key" data-digit="3"><img src="Assets/Images/Botton3.svg" alt=""></button>
+            <button class="key" data-digit="4"><img src="Assets/Images/Botton4.svg" alt=""></button>
+            <button class="key" data-digit="5"><img src="Assets/Images/Botton5.svg" alt=""></button>
+            <button class="key" data-digit="6"><img src="Assets/Images/Botton6.svg" alt=""></button>
+            <button class="key" data-digit="7"><img src="Assets/Images/Botton7.svg" alt=""></button>
+            <button class="key" data-digit="8"><img src="Assets/Images/Botton8.svg" alt=""></button>
+            <button class="key" data-digit="9"><img src="Assets/Images/Botton9.svg" alt=""></button>
+        </div>
+
+        <button id = "search" class = "search-button"> <!--Boton amarillo para buscar-->
+            <img src = "Assets/Images/Search.svg" alt = "search">
+        </button> 
+
+        <div class="screenP"> <!--Pantalla invisible donde se muestra el pokemon-->
+            <img id="pokemon" alt="Pokemon" style="display:none;"> <!--Se muestra la imagen del pokemon, alt para lectores de pantalla y style para ocultar la img hasta que se decida-->
+        </div>
+
+        <img src="Assets/Images/BrilloBottom.svg" alt="BrilloBottom" class="brilloBottom"> <!--Img decorativa en el boton amarillo-->
+
+        <button id = "reset" class = "reset-button"> <!--Boton negro para resetear info del pokemon e img-->
+            <img src = "Assets/Images/Reset.svg" alt = "reset">
+        </button>
+
+        <button id = "up" class = "up-button"> <!--Flecha up-->
+            <img src = "Assets/Images/Up.svg" alt = "up">
+        </button>
+
+        <button id = "down" class = "down-button"> <!--Flecha down-->
+            <img src = "Assets/Images/Down.svg" alt = "down">
+        </button>
+
+        <button id = "right" class = "right-button"> <!--Flecha right-->
+            <img src = "Assets/Images/Right.svg" alt = "right">
+        </button>
+
+        <button id = "left" class = "left-button"> <!--Flecha left-->
+            <img src = "Assets/Images/Left.svg" alt = "left">
+        </button>
+
+        <div class = "info-HyW"> <!--Espacio para mostrar H y W en los espacios negros-->
+            <div id = "heightPokemon" class = "height-box">Height: </div> <!--Pongo el texto en el div porque es el texto predeterminado que sale-->
+            <div id = "weightPokemon" class = "weight-box"> Weight: </div>
+        </div>
+
+        <div id = "infoP"class = "info-Pokemon"> <!--Espacio para poner type, ability y weakness en pantalla negra -->
+            <p id = "type">Type:</p>
+            <p id = "ability">Ability:</p>
+            <p id = "weaknesses">Weakness:</p>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="enviroment.js"></script> <!--Enlace variable de entorno-->
+    <script src="script.js"></script> <!--Enlace JS-->
+</body>
+<video autoplay loop muted class = "background-video"> <!--Video-->
+    <source src = "Assets/Images/rayquaza-flying-in-the-sky-pokemon-HD-live.mp4">
+</video>
+
+</html>
