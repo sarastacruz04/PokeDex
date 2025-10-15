@@ -1,0 +1,271 @@
+body {
+  display: flex; /*Flexbox, padre*/
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vh;
+}
+
+.background-video {
+    position:fixed; /*Se mantiene siempre en la misma posicion de la pantalla*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre toda la pantalla sin deformarse */
+    z-index: -1; /*Queda detras de mi pokedex*/
+}
+
+
+.PokeDex {
+    position: relative; /* Para posicionar el botón dentro del contenedor */
+    display: inline-block; /* Ajusta el tamaño al contenido */
+    width: 90vw;
+    max-width:400px;
+    height: auto;
+}
+
+.PokeDex #close  {
+    width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+.PokeDex #open{
+  width:175%; /* Ajusta la imagen al tamaño del contenedor */
+}
+
+.button img {
+    width: 100%;
+    height: auto;
+    display: block; /*Para que el elemento se muestre como un bloque, ocupando todo el ancho dentro del contenedor*/
+}
+
+.button {
+    position: absolute; /*Coloca el elemento fuera del flujo normal*/
+    top:52%;
+    left: 10.5%;
+    width: 9%;
+    height: auto;
+    cursor:pointer;
+    background: transparent;/* Sin fondo */
+    border: none;/* Sin borde */
+    padding: 0;/* Sin espacio extra */ 
+}
+
+.Keypad{
+    position: absolute;
+    top: 54%;
+    left: 104.6%;
+    display: grid; /* Usamos grid para organizar los botones */
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+    width: 58%;  
+   
+}
+
+.Keypad .key {
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex; /* Usamos flexbox para centrar la imagen */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Keypad .key img {
+    width: 100%; /* Ajusta la imagen al tamaño del botón */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+.key {
+  position: relative; /*Para que no se amontonen entre ellos*/
+}
+
+.key::after {
+  content: attr(data-digit); /*Muestra el numero que puse en data-digit*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*Para centrar*/
+  font: bold 16px monospace;  
+  color: white;
+  pointer-events: none; /*Para que no bloquee el click*/
+}
+
+
+.screenP {
+    position: absolute;
+    top: 26%;
+    left: 17%;
+    width: 58%;
+    height: 20%;
+    border-radius: 8px;
+    overflow: hidden; /* Para que el contenido no se salga de los bordes redondeados */
+}
+
+#pokemon {
+    width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    display: none; /* Oculta la imagen cuando la pokedex esta cerrada*/
+}
+
+.green {
+    position: absolute;
+    top: 74%; 
+    left: 15%;
+    width: 34%;
+    height: 12%;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #55AB62;
+}
+
+#codePokemon {
+    width: 100%;
+    height: 100%;
+    display: flex; /* Usamos flexbox para centrar el texto */
+    justify-content: flex-end; /* Alinea el texto a la derecha */
+    align-items: flex-end; /* Alinea el texto al fondo */
+    font: 700 16px monospace; /* Fuente monoespaciada para el código */
+    color: #333;
+    opacity: 0.8; /* Un poco transparente */
+}
+
+.name {
+    position:absolute;
+    overflow: hidden;
+    top: 47.5%; 
+    left: 30%;
+    width: 30%;
+    height: 5%;
+}
+
+.name-pokemon {
+  font: bold 14px monospace;
+  color: rgb(0, 0, 0);          
+  text-align: center;   
+  line-height: 200%;     
+  text-transform: uppercase;
+}
+
+.search-button {
+    position: absolute;
+    top: 76.5%;
+    left: 151%;
+    width: 8%;
+    height: auto;
+    cursor: pointer;
+    background: transparent; /* Sin fondo */
+    border: none; /* Sin borde */
+    padding: 0; /* Sin espacio extra */
+}
+
+.brilloBottom {
+    position: absolute;
+    top: 77%;
+    left: 153%;
+    width: 2%;
+    display: block; /* Elimina el espacio debajo de la imagen */
+    pointer-events: none; /* Para que no interfiera con el boton */
+}
+
+.reset-button{
+    position:absolute;
+    background: transparent;
+    border: none;
+    top: 56%;
+    left: 10%;
+    cursor:pointer;
+}
+
+.up-button{
+    position:absolute;
+    background: transparent;
+    border: none;
+    top: 67%;
+    left: 65.5%;
+    cursor:pointer;
+}
+
+.down-button{
+    position:absolute;
+    background: transparent;
+    border: none;
+    top: 75.5%;
+    left: 65.5%;
+    cursor:pointer;
+}
+
+.right-button{
+    position:absolute;
+    background: transparent;
+    border: none;
+    top: 72%;
+    left: 71%;
+    cursor:pointer;
+}
+
+.left-button{
+    position:absolute;
+    background: transparent;
+    border: none;
+    top: 72%;
+    left: 60%;
+    cursor:pointer;
+}
+
+.info-HyW {
+    position: absolute;
+    color:darkorange;
+    display: flex;
+    top: 85.5%;  
+    left: 105%; 
+    gap: 91px;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.height-box, .weight-box {
+  color: orange;
+  font: bold 14px monospace;
+  border-radius: 3px;
+  display: inline-block; 
+  display: flex;                 
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;                  
+  box-sizing: border-box;
+  white-space: nowrap;         
+}
+
+.info-Pokemon {
+  position: absolute;
+  top: 28%;     
+  left: 103.5%;     
+  width: 57%;        /* hazla más ancha para que entre el texto */
+  height: 18%;       /* dale más altura */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* alinea arriba */
+  align-items: flex-start;     /* alinea a la izquierda */
+  font: 700 12px monospace;    /* fuente fija */
+  padding: 5px;                /* espacio interno */
+  overflow-y: auto;            /* scroll si se llena */
+  word-wrap: break-word;       /* fuerza a que el texto baje si es largo */
+  color: lightgreen;
+}
+
+.info-Pokemon p {
+  margin: 2px 0; /* separa un poco cada línea */
+}
+
+
+
+
+
+ 
